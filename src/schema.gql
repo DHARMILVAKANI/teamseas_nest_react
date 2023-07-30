@@ -1,0 +1,46 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Donation {
+  id: String
+  count: Int!
+  displayName: String!
+  email: String!
+  mobile: String
+  team: String
+  message: String
+}
+
+type SubscriptionsDto {
+  totalUpdated: Int!
+}
+
+type Query {
+  donations(query: QueryReqDto): [Donation!]!
+  donation(id: Int!): Donation!
+  donationCounts: Int!
+}
+
+input QueryReqDto {
+  field: String
+  direction: String
+  search: String
+}
+
+type Mutation {
+  createDonation(createDonationInput: CreateDonationInput!): Donation!
+}
+
+input CreateDonationInput {
+  count: Int!
+  displayName: String!
+  email: String
+  mobile: String
+  team: String
+  message: String
+}
+
+type Subscription {
+  totalUpdated: SubscriptionsDto!
+}
